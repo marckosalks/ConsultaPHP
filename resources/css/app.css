@@ -1,0 +1,12 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+body .ajuste-tab{
+    display: flex;
+    margin: 20 px;
+    background-color: #4CAF50;
+}
+
+body {
+    background-color: #f0f0f0;
+}
