@@ -10,50 +10,64 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Styles css -->
-    <@vite('resources/css/app.css') 
+    @vite('resources/css/app.css')
 
 </head>
 
 <body>
     <div class="alinhar-busca">
-        <button type="submit" class="btn btn-secondary">
-            <i class="bi bi-search"></i>
+        <button type="submit" class="btn btn-secondary btn-search">
+            <i class="bi bi-search teste"></i>
         </button>
     </div>
 
-    <div class="ajuste-tab">
+   <div class="ajuste-tab">
+    <table class="table table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Shop ID</th>
+                <th>Pedido ID</th>
+                <th>QR Code</th>
+                <th>Status</th>
+                <th>Criado</th>
+                <th>Mensagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>337523306</td>
+                <td>2506228F8S0M0</td>
+                <td>BR253622624689N</td>
+                <td>COMPLETED</td>
+                <td>2025-06-30 00:12:47</td>
+                <td></td>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>@social</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>451446974</td>
+                <td>25062PTC6UBV65</td>
+                <td></td>
+                <td>CANCELLED</td>
+                <td>2025-06-30 00:12:46</td>
+                <td>CANCELADO</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>397030999</td>
+                <td>250630U6GD71F4</td>
+                <td></td>
+                <td>CANCELLED</td>
+                <td>2025-06-30 00:12:41</td>
+                <td>CANCELADO</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 
 </html>
