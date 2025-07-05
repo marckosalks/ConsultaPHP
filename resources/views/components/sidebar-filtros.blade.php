@@ -10,7 +10,7 @@
 
             </div>
             <div class="">
-                <button type="submit" class="btn-input">
+                <button  class="btn-input">
                     <i class="bi bi-search teste"></i>
                 </button>
             </div>
