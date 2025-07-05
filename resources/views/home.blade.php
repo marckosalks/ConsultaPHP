@@ -15,7 +15,7 @@
 </head>
 
 <body>
-
+    <!-- header -->
     <nav class="navbar navbar-expand-lg  bg-secondary" data-bs-theme="dark">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -26,13 +26,17 @@
         </div>
     </nav>
 
-
+    <!-- button de pesquisa -->
     <div class="alinhar-busca">
         <button type="submit" class="btn btn-secondary btn-search">
             <i class="bi bi-search teste"></i>
         </button>
     </div>
 
+    <!-- component importado -->
+    <x-sidebar-filtros />
+
+    <!-- table -->
     <div class="ajuste-tab">
         <table class="table table table-striped">
             <thead>
