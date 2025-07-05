@@ -6,11 +6,11 @@
         <div class="containerPesquisa">
             <div>
                 <span>Número do Pedido: </span>
-                <input type="text" id="pedido">
+                <input type="text" id="pedido" ">
 
             </div>
-            <div class="alinhar-busca">
-                <button type="submit" class="btn btn-secondary btn-search">
+            <div class="">
+                <button type="submit" class="btn-input">
                     <i class="bi bi-search teste"></i>
                 </button>
             </div>
@@ -32,7 +32,7 @@
         </select>
 
         <button type="submit">
-            pesquisar
+            Pesquisar
         </button>
     </form>
 </div>
