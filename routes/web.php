@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PainelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [PainelController::class, 'painel'])->name('painel');
+// criar rotas
+Route::get('/consulta/pedidos', function () {
     return view('home');
 });
