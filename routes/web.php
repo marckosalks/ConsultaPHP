@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PainelController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PainelController::class, 'painel'])->name('painel');
-// criar rotas
+
+// criei rota para fazer
+// Route::get('/', [HomeController::class, 'home'])->name('home');
+
+
 Route::get('/consulta/pedidos', function () {
     return view('home');
 });
+
+
