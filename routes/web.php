@@ -17,14 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PainelController::class, 'painel'])->name('painel');
 
-// criei rota para fazer
-// Route::get('/', [HomeController::class, 'home'])->name('home');
-
 
 Route::get('/consulta/pedidos', function () {
     return view('home');
 });
 
+
+Route::fallback(function () {
+    return "Página não encontrada, favor escrever uma rota existente!!!";
+});
+
+// criei rota para fazer
+// Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // //passar valor
 // Route::get('/teste', function () {
@@ -42,11 +46,11 @@ Route::get('/consulta/pedidos', function () {
 
 
 // passar paramentros estaticos
-Route::view('/teste', "teste", ['nomeIngresso' => 'Marcos e Duda']);
+// Route::view('/teste', "teste", ['nomeIngresso' => 'Marcos e Duda']);
 
 // navegação dinamica de rota ele chama sem precisar ser o nome original da rota
-Route::get('/ssr', function(){
-    return view('ha ha ha, eu sou dev de verdade!');
-})->name('painel-index');
+// Route::get('/ssr', function(){
+//     return view('ha ha ha, eu sou dev de verdade!');
+// })->name('painel-index');
 
 
