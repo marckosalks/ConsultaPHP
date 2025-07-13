@@ -6,8 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Seja bem vindo {{ $seuNome }} a página Teste!</h1>
-
+    <h1>Repositórios Git hub Marck Tigger:</h1>
+    <ul>
+    @foreach ( $repos as $repo )
+        <li>{{ $repo['name'] }}</li>
+    @endforeach
+    </ul>
 
 </body>
 </html>
