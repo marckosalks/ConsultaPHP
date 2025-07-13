@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PainelController;
+use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,8 @@ Route::get('/consulta/pedidos', function () {
 Route::fallback(function () {
     return "Página não encontrada, favor escrever uma rota existente!!!";
 });
+
+Route::get('teste', [TesteController::class, 'index']);
 
 // criei rota para fazer
 // Route::get('/', [HomeController::class, 'home'])->name('home');

@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Exibindo nomes do ingresso Aquário SP:</h1>
+    <h1>Seja bem vindo {{ $seuNome }} a página Teste!</h1>
 
-    <a href="{{ route('painel-index') }}">Chamaaaa 🔥</a>
+
 </body>
 </html>
