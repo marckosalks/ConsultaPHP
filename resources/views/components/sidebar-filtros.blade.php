@@ -10,8 +10,8 @@
 
             </div>
             <div class="">
-                <button  class="btn-input">
-                    <i class="bi bi-search teste"></i>
+                <button  class=" btn-input">
+                <i class="bi bi-search teste"></i>
                 </button>
             </div>
         </div>
@@ -29,6 +29,15 @@
             <option value="pendente">Pendente</option>
             <option value="entregue">Entregue</option>
             <option value="finalizado">Finalizado</option>
+        </select>
+
+        <!-- fazer logica da requisição e for pra esse cara -->
+        <span>Tipo de serviço: </span>
+        <select name="statusPedido" id="statusPedido">
+            <option value="importado">ML</option>
+            <option value="pendente">Shopee</option>
+            <option value="entregue">Avulso</option>
+            <option value="finalizado">SameDay</option>
         </select>
 
         <button type="submit">

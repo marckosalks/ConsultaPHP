@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Http::macro('gitsada', function(){
+            return Http::baseUrl('https://api.github.com/users/');
+        });
+        Http::macro('omdb', function(){
+            return Http::baseUrl('http://www.omdbapi.com/?apikey=');
+        });
     }
 }

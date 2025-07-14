@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Repositórios Git hub Marck Tigger:</h1>
+    <h1>Filmes do Homem aranha:</h1>
     <ul>
-    @foreach ( $repos as $repo )
-        <li>{{ $repo['name'] }}</li>
-    @endforeach
+        @foreach ($movies['Search'] as $movie )
+            <li>{{$movie['Title']}}
+                <br>
+                <img src={{ $movie['Poster'] }} width="100px"  alt="">
+            </li>
+        @endforeach
     </ul>
 
 </body>

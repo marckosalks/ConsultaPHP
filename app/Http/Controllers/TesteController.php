@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Http;
 
 class TesteController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         // $seuNome = 'Marcola';
         // return view('teste', ['seuNome'=>$seuNome]);
 
@@ -19,13 +20,29 @@ class TesteController extends Controller
         // dd($response->ok(), $valorJson);
 
 
-        $response = Http::get('https://api.github.com/users/marckosalks/repos');
+        // $responseOmdb = Http::get('http://www.omdbapi.com/?apikey=' . env('OMDB_API_KEY') . '&s=dorama');
 
-        // dd($response->json());
+        $responseGitHub = Http::gitsada()->get('marckosalks/repos');
 
-        return view('teste', [
-            'repos' => $response->json()
+        $responseOmdb = Http::get('http://www.omdbapi.com/?apikey=', [
+            'apikey' => env('OMDB_API_KEY'),
+            's' => 'spiderman'
+
         ]);
+
+
+        if ($responseOmdb->failed()) {
+
+            dd($responseOmdb->json());
+        } else {
+
+            return view('teste', [
+                'movies' => $responseOmdb->json(),
+            ]);
+        }
+
+
+        // dd($responseGitHub->json());
 
     }
 }
