@@ -22,27 +22,42 @@ class TesteController extends Controller
 
         // $responseOmdb = Http::get('http://www.omdbapi.com/?apikey=' . env('OMDB_API_KEY') . '&s=dorama');
 
-        $responseGitHub = Http::gitsada()->get('marckosalks/repos');
+        // $responseGitHub = Http::gitsada()->get('marckosalks/repos');
 
-        $responseOmdb = Http::get('http://www.omdbapi.com/?apikey=', [
-            'apikey' => env('OMDB_API_KEY'),
-            's' => 'spiderman'
+        // $responseOmdb = Http::get('http://www.omdbapi.com/?apikey=', [
+        //     'apikey' => env('OMDB_API_KEY'),
+        //     's' => 'spiderman'
 
-        ]);
+        // ]);
 
 
-        if ($responseOmdb->failed()) {
+        // if ($responseOmdb->failed()) {
 
-            dd($responseOmdb->json());
-        } else {
+        //     dd($responseOmdb->json());
+        // } else {
 
-            return view('teste', [
-                'movies' => $responseOmdb->json(),
-            ]);
-        }
+        //     return view('teste', [
+        //         'movies' => $responseOmdb->json(),
+        //     ]);
+        // }
 
 
         // dd($responseGitHub->json());
+
+
+
+
+        // token
+
+        // $responseGitHub = Http::gitsada()->get('marckosalks/repos')->withHeaders(['Authorization' => 'Bearear '])->get('');
+        // $responseGitHub = Http::withToken(env(''))->get(
+        //     'https://api.github.com/users/marckosalks/repos');
+
+
+        return view('teste', [
+            // 'movies' => $responseOmdb->json(),
+        ]);
+
 
     }
 }
