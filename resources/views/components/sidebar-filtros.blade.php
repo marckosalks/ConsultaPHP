@@ -2,7 +2,7 @@
 
 <!-- passando por propiedade os dados do componente pai -->
 
-@props(['servicosOption'])
+@props(['servicos'])
 
 <div class="container-sidebar">
     <h3>Faça sua consulta:</h3>
@@ -11,7 +11,7 @@
         <div class="containerPesquisa">
             <div>
                 <span>Número do Pedido: </span>
-                <input type="text" id="pedido" ">
+                <input type="text" id="pedido" >
 
             </div>
             <div class="">
@@ -34,12 +34,14 @@
             <option value="pendente">Pendente</option>
             <option value="entregue">Entregue</option>
             <option value="finalizado">Finalizado</option>
+            <option value="" selected>Selecione o Status</option>
         </select>
 
         <!-- fazer logica da requisição e for pra esse cara -->
         <select name="tipoServico" id="tipoServico">
-            @foreach ($servicosOption['data'] as $srvStatus)
-                <option value="{{ $srvStatus['srv_nome'] }}">{{ $srvStatus['srv_nome'] }}</option>
+            <option value="">Selecione o serviço</option>
+            @foreach ($servicos as $servico)
+                <option value="{{ $servico['srv_codservico'] }}">{{ $servico['srv_nome'] }}</option>
             @endforeach
         </select>
 

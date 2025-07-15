@@ -7,19 +7,24 @@ use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
-    public function home(){
+    public function home()
+    {
 
-         $token = env('BEARER_TOKEN');
-        $codEmp = 9;
 
-        $responseOpt = Http::withToken($token)->get( env('OPTION_URL'), [
-            'codemp' => $codEmp,
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . env('BEARER_HUB'),
+            'Accept' => 'application/json',
+        ])->get(env('URL_HUB') . 'servicos/lista', [
+            'codemp' => 9
         ]);
 
-        //  dd($responseOpt->json());
+        if ($response->successful()) {
+            $lista = $response->json();
+        }
+
 
         return view('home', [
-             'servicosOption' => $responseOpt->json()
+            'servicos' => $lista['data']
         ]);
 
     }

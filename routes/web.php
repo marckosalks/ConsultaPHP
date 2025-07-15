@@ -24,7 +24,7 @@ Route::get('/', [PainelController::class, 'painel'])->name('painel');
 //     return view('home');
 // });
 
-Route::get('/consulta/pedidos', [HomeController::class,'home']);
+Route::get('/consulta/pedidos', [HomeController::class,'home'])->name('xyz');
 
 
 Route::fallback(function () {
