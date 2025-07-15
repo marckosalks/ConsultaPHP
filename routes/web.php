@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PainelController;
+use App\Http\Controllers\SideBarController;
 use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +20,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PainelController::class, 'painel'])->name('painel');
 
 
-Route::get('/consulta/pedidos', function () {
-    return view('home');
-});
+// Route::get('/consulta/pedidos', function () {
+//     return view('home');
+// });
+
+Route::get('/consulta/pedidos', [HomeController::class,'home']);
 
 
 Route::fallback(function () {
     return "Página não encontrada, favor escrever uma rota existente!!!";
 });
 
-Route::get('teste', [TesteController::class, 'index']);
+// Route::get('teste', [TesteController::class, 'index']);
+

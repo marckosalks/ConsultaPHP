@@ -35,8 +35,8 @@
         </button>
     </div>
 
-    <!-- component importado -->
-    <x-sidebar-filtros />
+    <!-- component importado, passando dados do control home -->
+    <x-sidebar-filtros :servicosOption="$servicosOption"/>
 
     <!-- table -->
     <div class="ajuste-tab">

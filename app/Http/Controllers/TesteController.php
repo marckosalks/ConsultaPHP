@@ -54,8 +54,22 @@ class TesteController extends Controller
         //     'https://api.github.com/users/marckosalks/repos');
 
 
+
+        // fazendo teste para componente sidbar:
+
+           $token = env('BEARER_TOKEN');
+        $codEmp = 9;
+
+        $responseOpt = Http::withToken($token)->get( env('OPTION_URL'), [
+            'codemp' => $codEmp,
+        ]);
+
+        // sdd($responseOpt->json());
+
+
+
         return view('teste', [
-            // 'movies' => $responseOmdb->json(),
+           'servicosOption' => $responseOpt->json()
         ]);
 
 

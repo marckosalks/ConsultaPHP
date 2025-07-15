@@ -5,22 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class HomeController extends Controller
+class SideBarController extends Controller
 {
-    public function home(){
+     public function sidbarFiltros(){
 
-         $token = env('BEARER_TOKEN');
+        $token = env('BEARER_TOKEN');
         $codEmp = 9;
 
         $responseOpt = Http::withToken($token)->get( env('OPTION_URL'), [
             'codemp' => $codEmp,
         ]);
 
-        //  dd($responseOpt->json());
+        // sdd($responseOpt->json());
 
-        return view('home', [
+        return view('sidebar', [
              'servicosOption' => $responseOpt->json()
         ]);
-
     }
 }

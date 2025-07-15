@@ -1,4 +1,9 @@
 {{-- resources/views/components/sidebar-filtros.blade.php --}}
+
+<!-- passando por propiedade os dados do componente pai -->
+
+@props(['servicosOption'])
+
 <div class="container-sidebar">
     <h3>Faça sua consulta:</h3>
     <form>
@@ -32,12 +37,10 @@
         </select>
 
         <!-- fazer logica da requisição e for pra esse cara -->
-        <span>Tipo de serviço: </span>
-        <select name="statusPedido" id="statusPedido">
-            <option value="importado">ML</option>
-            <option value="pendente">Shopee</option>
-            <option value="entregue">Avulso</option>
-            <option value="finalizado">SameDay</option>
+        <select name="tipoServico" id="tipoServico">
+            @foreach ($servicosOption['data'] as $srvStatus)
+                <option value="{{ $srvStatus['srv_nome'] }}">{{ $srvStatus['srv_nome'] }}</option>
+            @endforeach
         </select>
 
         <button type="submit">
