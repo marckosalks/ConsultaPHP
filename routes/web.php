@@ -1,9 +1,8 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PainelController;
-use App\Http\Controllers\SideBarController;
-use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,19 +16,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', [PainelController::class, 'painel'])->name('painel');
 
+Route::get('/consulta/pedidos', [HomeController::class,'home'])->name('option');
 
-// Route::get('/consulta/pedidos', function () {
-//     return view('home');
+// retornando view
+// Route::get('/formulario', function () {
+//     return view('ajax'); // mostra o formulário
 // });
 
-Route::get('/consulta/pedidos', [HomeController::class,'home'])->name('xyz');
-
+// Route::post('/ajax',  [AjaxController::class, 'receber']);
 
 Route::fallback(function () {
     return "Página não encontrada, favor escrever uma rota existente!!!";
 });
 
-// Route::get('teste', [TesteController::class, 'index']);
 
