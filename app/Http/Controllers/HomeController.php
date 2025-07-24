@@ -14,7 +14,7 @@ class HomeController extends Controller
             'Authorization' => 'Bearer ' . env('BEARER_HUB'),
             'Accept' => 'application/json',
         ])->get(env('URL_HUB') . 'servicos/lista', [
-            'codemp' => 39
+            'codemp' => 9
         ]);
 
         if ($response->successful()) {
@@ -22,7 +22,7 @@ class HomeController extends Controller
         }
 
         return view('home', [
-            'servicos' => $lista['data']
+            'servicos' => $lista['data'] ?? [],
         ]);
 
     }

@@ -11,12 +11,12 @@
         <div class="containerPesquisa">
             <div>
                 <span>Número do Pedido: </span>
-                <input type="text" id="pedido" >
+                <input type="text" id="pedido">
 
             </div>
             <div class="">
-                <button  class=" btn-input">
-                <i class="bi bi-search teste"></i>
+                <button class=" btn-input">
+                    <i class="bi bi-search teste"></i>
                 </button>
             </div>
         </div>
@@ -41,12 +41,16 @@
         <select name="tipoServico" id="tipoServico">
             <option value="">Selecione o serviço</option>
             @foreach ($servicos as $servico)
-                <option value="{{ $servico['srv_codservico'] }}">{{ $servico['srv_nome'] }}</option>
+            <option value="{{ $servico['srv_codservico'] }}">{{ $servico['srv_nome'] }}</option>
             @endforeach
         </select>
 
         <button type="submit">
             Pesquisar
         </button>
+
     </form>
+    <script>
+
+    </script>
 </div>
