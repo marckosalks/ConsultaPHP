@@ -9,7 +9,6 @@ class HomeController extends Controller
 {
     public function home()
     {
-
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . env('BEARER_HUB'),
             'Accept' => 'application/json',
@@ -24,6 +23,5 @@ class HomeController extends Controller
         return view('home', [
             'servicos' => $lista['data'] ?? [],
         ]);
-
     }
 }

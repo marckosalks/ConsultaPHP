@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consulta de remessa</title>
+    <!-- jquery para poder usar no component -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- icones Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- Bootstrap -->
@@ -36,7 +38,7 @@
     </div>
 
     <!-- component importado, passando dados do control home -->
-    <x-sidebar-filtros :servicos="$servicos"/>
+    <x-sidebar-filtros :servicos="$servicos" />
 
     <!-- table -->
     <div class="ajuste-tab">
@@ -87,6 +89,33 @@
         </table>
     </div>
 
+    <script>
+        const codemp = 9;
+        // const URL_HUB = '{{env('URL_HUB')}}servicos/lista?codemp=' + codemp;
+        const URL_HUB = 'https://api.github.com/users/marckosalks/repos';
+        const TOKEN_HUB ='{{ env('BEARER_HUB') }}'
+
+         $.ajax({
+            url: URL_HUB,
+            method: 'GET',
+            // headers: {
+            //     'Authorization': `Bearer ${TOKEN_HUB}`
+            // },
+            // data: { servico:  },
+            success: function (resposta) {
+                console.log("resposta:", resposta);
+                const data = resposta;
+
+                data.forEach(element => {
+                    console.log(element.name);
+                });
+            },
+            error: function (xhr) {
+                console.error('Erro ao buscar dados:', xhr.status, xhr.responseText);
+            }
+        });
+
+    </script>
 </body>
 
 </html>
