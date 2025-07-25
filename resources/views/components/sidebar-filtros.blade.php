@@ -37,12 +37,8 @@
             <option value="" selected>Selecione o Status</option>
         </select>
 
-        <!-- fazer logica da requisição e for pra esse cara -->
         <select name="tipoServico" id="tipoServico">
             <option value="">Selecione o serviço</option>
-            @foreach ($servicos as $servico)
-                <option value="{{ $servico['srv_codservico'] }}">{{ $servico['srv_nome'] }}</option>
-            @endforeach
         </select>
 
         <button type="submit">

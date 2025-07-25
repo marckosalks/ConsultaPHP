@@ -106,8 +106,13 @@
                 console.log("resposta:", resposta);
                 const data = resposta;
 
-                data.forEach(element => {
-                    console.log(element.name);
+                const select = $('#tipoServico');
+
+                data.forEach(servico => {
+                    // console.log(element.name);
+
+                    //adciona options com os retonos da api
+                    select.append(`<option value="${servico.id}">${servico.name}</option>`);
                 });
             },
             error: function (xhr) {
